@@ -250,13 +250,19 @@ layui.use(['layer','element','jquery'],function() {
                 $(this).find('.nav_right').html('&#xe697;');
                 $(this).children('.sub-menu').stop(true,true).slideUp();
                 $(this).siblings().children('.sub-menu').slideUp();
+                if($(this).children('a').find('.nav_right').hasClass('layui-icon-subtraction')){
+                	$(this).children('a').find('.nav_right').removeClass('layui-icon-subtraction').addClass('layui-icon-addition');
+                }
             }else{
                 $(this).addClass('open');
                 $(this).children('a').find('.nav_right').html('&#xe6a6;');
                 $(this).children('.sub-menu').stop(true,true).slideDown();
                 $(this).siblings().children('.sub-menu').stop(true,true).slideUp();
-                $(this).siblings().find('.nav_right').html('&#xe697;');
+              	$(this).siblings().find('.nav_right').html('&#xe697;');
                 $(this).siblings().removeClass('open');
+                if($(this).children('a').find('.nav_right').hasClass('layui-icon-addition')){
+                	$(this).children('a').find('.nav_right').removeClass('layui-icon-addition').addClass('layui-icon-subtraction');
+                }
             }
         }
         event.stopPropagation(); 
