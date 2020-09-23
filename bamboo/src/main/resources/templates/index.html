@@ -9,7 +9,7 @@
         <meta http-equiv="Cache-Control" content="no-siteapp" />
         <link rel="stylesheet" th:href="@{../plugins/X-admin-2.2/css/font.css}">
         <link rel="stylesheet" th:href="@{../plugins/X-admin-2.2/css/xadmin.css}">
-      	<!--  <link rel="stylesheet" th:href="@{../plugins/X-admin-2.2/css/theme5.css}">  -->
+      	<!-- <link rel="stylesheet" th:href="@{../plugins/X-admin-2.2/css/theme5.css}">  --> 
         <script th:src="@{../plugins/layui-2.5.6/layui.js}" charset="utf-8"></script>
         <script th:src="@{../plugins/X-admin-2.2/js/xadmin.js}"></script>
         <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -108,20 +108,20 @@
                     
                     <li>
                         <a href="javascript:;" class="menu-first">
-                            <i class="iconfont left-nav-li" lay-tips="订单管理">&#xe723;</i>
+                            <i class="layui-icon layui-icon-form left-nav-li" lay-tips="订单管理"></i>
                             <cite>订单管理</cite>
                             <i class="layui-icon layui-icon-addition nav_right"></i>
                         </a>
                         <ul class="sub-menu">
                             <li>
                                 <a onclick="xadmin.add_tab('订单列表','order-list.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
+                                    <i class="layui-icon layui-icon-list"></i>
                                     <cite>订单列表</cite>
                                 </a>
                             </li>
                             <li>
                                 <a onclick="xadmin.add_tab('订单列表1','order-list1.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
+                                    <i class="layui-icon layui-icon-list"></i>
                                     <cite>订单列表1</cite>
                                </a>
                             </li>

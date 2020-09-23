@@ -88,7 +88,8 @@ body{
 .container{
     width: 100%;
     height: 72px;
-    background-color: #0092dc;
+/*     background-color: #0092dc; */
+    background: linear-gradient(to left, #7b4397, #2196f3);
     line-height: 72px;
 }
 .container a,.layui-nav .layui-nav-item a{
@@ -189,12 +190,12 @@ body{
     transition: all 0.3s;
 }
 .left-nav a:hover{
-    background: #009688 !important;
+    background: #58b9c3 !important;
     color: #fff;
-    border-color:  #04564e !important;
+    border-color: #0092dc !important;
 }
 .left-nav a.active{
-    background: #009688 !important;
+    background: #5fb878 !important;
     color: #fff;
     border-color:  #FF5722 !important;
 	border-left: 5px solid #0092dc;
@@ -270,7 +271,7 @@ body{
 }
 .page-content-bg{
     position: absolute;
-    top: 45px;
+    top: 72px;
     right: 0;
     /*bottom: 42px;*/
     bottom: 0px;
