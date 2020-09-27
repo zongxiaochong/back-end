@@ -15,13 +15,15 @@ public class SysMenu {
 	
 	private String path;
 	
+	private String url;
+	
 	private Integer parentId;
 	
 	private int level;
 	
 	private int sort;
 	
-	private List<SysMenu> childList;
+	private List<SysMenu> child;
 	
 	private String creator;
 	
@@ -97,11 +99,11 @@ public class SysMenu {
 	}
 
 	public List<SysMenu> getChildList() {
-		return childList;
+		return child;
 	}
 
-	public void setChild(List<SysMenu> childList) {
-		this.childList = childList;
+	public void setChild(List<SysMenu> child) {
+		this.child = child;
 	}
 
 	public String getCreator() {
@@ -127,5 +129,14 @@ public class SysMenu {
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
 	
 }

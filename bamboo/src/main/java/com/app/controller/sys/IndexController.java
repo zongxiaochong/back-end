@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.pojo.sys.SysMenu;
-import com.app.service.sys.IndexService;
+import com.app.service.sys.MenuService;
 
 @Controller
 public class IndexController {
 	
 	@Autowired
-	private IndexService indexService;
+	private MenuService menuService;
 	
 	@RequestMapping("/index")
 	public String index() {
@@ -27,13 +27,21 @@ public class IndexController {
 		return "sys/home";
 	}
 	
-	@GetMapping("/loadMenu")
-	@ResponseBody
-	public Object loadMenu() {
-		List<SysMenu> sysMenuList = indexService.getSysMenuList();
-		return sysMenuList;
+	
+	@RequestMapping("/dict")
+	public String dict() {
+		return "sys/dict";
 	}
 	
 	
+	
+	@GetMapping("/loadMenu")
+	@ResponseBody
+	public Object loadMenu() {
+		List<SysMenu> sysMenuList = menuService.getSysMenuList();
+		return sysMenuList;
+	}
+	
+ 
 
 }

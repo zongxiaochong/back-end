@@ -188,6 +188,7 @@ body{
     cursor: pointer;
 	border-left: 5px solid #E0ECFF; 
     transition: all 0.3s;
+    border-bottom: 1px solid #E0ECFF;
 }
 .left-nav a:hover{
     background: #58b9c3 !important;
@@ -226,7 +227,7 @@ body{
     cursor: pointer;
 }
 .left-nav #nav li .sub-menu li .sub-menu li a{
-    padding-left: 45px;
+    padding-left: 50px;
 }
 /*.left-nav #nav li .sub-menu li a:hover{
     color: #148cf1;
@@ -245,8 +246,8 @@ body{
     height: 14px;
 }
 .left-nav #nav .layui-icon{
-	color: #FF5722;
-	font-size: 22px;
+/* 	color: #FF5722; */
+	font-size: 16px;
 	font-weight: 600;
 }
 .x-slide_left {
@@ -548,3 +549,6 @@ table th, table td {
 	height:50px
 }
 
+.menu-cite{
+	margin-left: 25px;
+}

@@ -12,15 +12,16 @@
       	<!-- <link rel="stylesheet" th:href="@{/plugins/X-admin-2.2/css/theme5.css}">  --> 
         <script th:src="@{/plugins/layui-2.5.6/layui.js}" charset="utf-8"></script>
         <script th:src="@{/plugins/X-admin-2.2/js/xadmin.js}"></script>
-        <script th:src="@{/js/sys/index.js}"></script>
         <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
 	    <!--[if lt IE 9]>
 		<script th:src="@{/js/common/html5.min.js}"></script>
 		<script th:src="@{/js/common/respond.min.js}"></script>
 	    <![endif]-->
+		<script th:src="@{/js/jquery/jquery.min.js}"></script>
+        <script th:src="@{/js/sys/index.js}"></script>
         <script>
             // 是否开启刷新记忆tab功能
-         	var is_remember = false;
+         	//var is_remember = true;
         </script>
     </head>
     <body class="index">
@@ -30,7 +31,7 @@
                 <a href="" class="layui-icon layui-icon-share"></a>
             </div>
             <div class="left_open">
-                <a><i title="展开左侧栏" class="layui-icon layui-icon-shrink-right"></i></a>
+                <a><i title="展开左侧栏" class="layui-icon layui-icon-slider"></i></a>
             </div>
 			<ul class="layui-nav right">
 			  <li class="layui-nav-item">
@@ -54,7 +55,7 @@
         <div class="left-nav">
             <div id="side-nav">
                 <ul id="nav">
-                    <li>
+                    <!-- <li>
                         <a href="javascript:;" class="menu-first">
                             <i class="layui-icon layui-icon-username left-nav-li" lay-tips="会员管理"></i>
                             <cite>会员管理</cite>
@@ -129,7 +130,7 @@
                                </a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
