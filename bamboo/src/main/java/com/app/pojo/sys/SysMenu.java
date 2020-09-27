@@ -1,6 +1,7 @@
 package com.app.pojo.sys;
 
 import java.util.Date;
+import java.util.List;
 
 public class SysMenu {
 	
@@ -12,17 +13,23 @@ public class SysMenu {
 	
 	private String icon;
 	
+	private String path;
+	
 	private Integer parentId;
 	
 	private int level;
 	
 	private int sort;
 	
+	private List<SysMenu> childList;
+	
 	private String creator;
 	
 	private Date createTime;
 	
 	private String createDate;
+	
+	
 	
 
 	public Integer getId() {
@@ -57,6 +64,14 @@ public class SysMenu {
 		this.icon = icon;
 	}
 
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
+	}
+
 	public Integer getParentId() {
 		return parentId;
 	}
@@ -79,6 +94,14 @@ public class SysMenu {
 
 	public void setSort(int sort) {
 		this.sort = sort;
+	}
+
+	public List<SysMenu> getChildList() {
+		return childList;
+	}
+
+	public void setChild(List<SysMenu> childList) {
+		this.childList = childList;
 	}
 
 	public String getCreator() {
@@ -104,5 +127,5 @@ public class SysMenu {
 	public void setCreateDate(String createDate) {
 		this.createDate = createDate;
 	}
-
+	
 }
