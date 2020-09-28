@@ -11,7 +11,7 @@ public class SysMenu {
 	
 	private String menuName;
 	
-	private String icon;
+	private String iconFont;
 	
 	private String path;
 	
@@ -58,12 +58,12 @@ public class SysMenu {
 		this.menuName = menuName;
 	}
 
-	public String getIcon() {
-		return icon;
+	public String getIconFont() {
+		return iconFont;
 	}
 
-	public void setIcon(String icon) {
-		this.icon = icon;
+	public void setIconFont(String iconFont) {
+		this.iconFont = iconFont;
 	}
 
 	public String getPath() {

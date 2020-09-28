@@ -1,7 +1,11 @@
 var is_remember = true;
 
 $(function() {
+	initPage.loadUser();
 	initPage.loadMenu();
+
+	
+	
 });
 
 
@@ -9,6 +13,11 @@ $(function() {
  * 页面加载
  */
 var initPage = {
+		loadUser: function() {
+			$("#userHead").attr('src', 'https://static.oschina.net/new-osc/img/logo_osc_simple.svg');
+			$("#userName").text("诸葛亮");
+		},
+		
 		loadMenu: function() {
 			$.ajax({
 				url: '/loadMenu',
@@ -31,7 +40,7 @@ var initPage = {
 				var menuCode_1 = data[i].menuCode;
 				var menuName_1 = data[i].menuName;
 				var path_1 = data[i].path;
-				var icon_1 = data[i].icon;
+				var iconFont_1 = data[i].iconFont;
 				var childList_1 = data[i].childList;
 				menuHtml += '<li>';
 				if (path_1) {
@@ -39,8 +48,8 @@ var initPage = {
 				} else {
 					menuHtml += '<a class="menu-first" href="javascript:;">';
 				}
-				if (icon_1) {
-					menuHtml += '<i class="layui-icon ' + icon_1 + ' left-nav-li"></i>'
+				if (iconFont_1) {
+					menuHtml += '<i class="layui-icon ' + iconFont_1 + ' left-nav-li"></i>'
 				} else {
 					menuHtml += '<i class="layui-icon menu-cite left-nav-li"></i>'
 				}
@@ -57,7 +66,7 @@ var initPage = {
 						var menuCode_2 = childList_1[j].menuCode;
 						var menuName_2 = childList_1[j].menuName;
 						var path_2 = childList_1[j].path;
-						var icon_2 = childList_1[j].icon;
+						var iconFont_2 = childList_1[j].iconFont;
 						var childList_2 = childList_1[j].childList;
 						menuHtml += '<li>';
 						if (path_2) {
@@ -65,8 +74,8 @@ var initPage = {
 						} else {
 							menuHtml += '<a href="javascript:;">';
 						}
-						if (icon_2) {
-							menuHtml += '<i class="layui-icon ' + icon_2 + '"></i>'
+						if (iconFont_2) {
+							menuHtml += '<i class="layui-icon ' + iconFont_2 + '"></i>'
 						} else {
 							menuHtml += '<i class="layui-icon menu-cite"></i>'
 						}
@@ -91,8 +100,8 @@ var initPage = {
 								} else {
 									menuHtml += '<a href="javascript:;">';
 								}
-								if (icon_3) {
-									menuHtml += '<i class="layui-icon ' + icon_3 + '"></i>'
+								if (iconFont_3) {
+									menuHtml += '<i class="layui-icon ' + iconFont_3 + '"></i>'
 								} else {
 									menuHtml += '<i class="layui-icon menu-cite"></i>'
 								}

@@ -13,7 +13,7 @@ public class MenuDataVo {
 		menu.setId(1);
 		menu.setMenuCode("sys");
 		menu.setMenuName("系统设置");
-		menu.setIcon("layui-icon-set");
+		menu.setIconFont("layui-icon-set");
 		menu.setParentId(0);
 		menu.setSort(6);
 		list.add(menu);
@@ -22,7 +22,7 @@ public class MenuDataVo {
 		menu.setId(2);
 		menu.setMenuCode("sys-menu");
 		menu.setMenuName("菜单管理");
-		menu.setIcon("layui-icon-component");
+		menu.setIconFont("layui-icon-component");
 		menu.setParentId(1);
 		menu.setSort(1);
 		menu.setPath("/menu/index");
@@ -32,7 +32,7 @@ public class MenuDataVo {
 		menu.setId(3);
 		menu.setMenuCode("sys-role");
 		menu.setMenuName("角色管理");
-		menu.setIcon("layui-icon-auz");
+		menu.setIconFont("layui-icon-auz");
 		menu.setParentId(1);
 		menu.setSort(2);
 		menu.setPath("/role/index");
@@ -42,7 +42,7 @@ public class MenuDataVo {
 		menu.setId(4);
 		menu.setMenuCode("sys-account");
 		menu.setMenuName("用户管理");
-		menu.setIcon("layui-icon-user");
+		menu.setIconFont("layui-icon-user");
 		menu.setParentId(1);
 		menu.setSort(3);
 		menu.setPath("/user/index");
@@ -53,7 +53,7 @@ public class MenuDataVo {
 		menu.setId(5);
 		menu.setMenuCode("sys-dict");
 		menu.setMenuName("数据字典");
-		menu.setIcon("layui-icon-template-1");
+		menu.setIconFont("layui-icon-template-1");
 		menu.setParentId(1);
 		menu.setPath("/dict");
 		menu.setSort(4);
@@ -63,7 +63,7 @@ public class MenuDataVo {
 //		menu.setId(6);
 //		menu.setMenuCode("product");
 //		menu.setMenuName("产品管理");
-//		menu.setIcon("layui-icon-picture");
+//		menu.setIconFont("layui-icon-picture");
 //		menu.setParentId(0);
 //		menu.setSort(2);
 //		list.add(menu);
@@ -72,7 +72,7 @@ public class MenuDataVo {
 //		menu.setId(7);
 //		menu.setMenuCode("product-brand");
 //		menu.setMenuName("品牌");
-//		//menu.setIcon("layui-icon-carousel");
+//		//menu.setIconFont("layui-icon-carousel");
 //		menu.setParentId(6);
 //		menu.setPath("/productbrand");
 //		menu.setSort(1);
@@ -82,7 +82,7 @@ public class MenuDataVo {
 //		menu.setId(8);
 //		menu.setMenuCode("product-item");
 //		menu.setMenuName("产品");
-//		menu.setIcon("layui-icon-layouts");
+//		menu.setIconFont("layui-icon-layouts");
 //		menu.setParentId(6);
 //		menu.setSort(2);
 //		list.add(menu);
@@ -91,7 +91,7 @@ public class MenuDataVo {
 //		menu.setId(9);
 //		menu.setMenuCode("product-item-list");
 //		menu.setMenuName("产品列表");
-//		menu.setIcon("layui-icon-tabs");
+//		menu.setIconFont("layui-icon-tabs");
 //		menu.setParentId(8);
 //		menu.setSort(3);
 //		list.add(menu);
@@ -100,7 +100,7 @@ public class MenuDataVo {
 //		menu.setId(10);
 //		menu.setMenuCode("product-item-admin");
 //		menu.setMenuName("产品管理");
-//		menu.setIcon("layui-icon-water");
+//		menu.setIconFont("layui-icon-water");
 //		menu.setParentId(8);
 //		menu.setSort(4);
 //		list.add(menu);
@@ -109,7 +109,7 @@ public class MenuDataVo {
 //		menu.setId(11);
 //		menu.setMenuCode("talk");
 //		menu.setMenuName("评论管理");
-//		menu.setIcon("layui-icon-dialogue");
+//		menu.setIconFont("layui-icon-dialogue");
 //		menu.setParentId(0);
 //		menu.setSort(4);
 //		list.add(menu);
@@ -118,7 +118,7 @@ public class MenuDataVo {
 //		menu.setId(12);
 //		menu.setMenuCode("talk-list");
 //		menu.setMenuName("评论列表");
-//		menu.setIcon("layui-icon-chart");
+//		menu.setIconFont("layui-icon-chart");
 //		menu.setParentId(11);
 //		menu.setSort(1);
 //		list.add(menu);
@@ -127,7 +127,7 @@ public class MenuDataVo {
 //		menu.setId(13);
 //		menu.setMenuCode("talk-idea");
 //		menu.setMenuName("意见反馈");
-//		menu.setIcon("layui-icon-file");
+//		menu.setIconFont("layui-icon-file");
 //		menu.setParentId(11);
 //		menu.setSort(2);
 //		list.add(menu);
