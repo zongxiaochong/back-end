@@ -89,8 +89,11 @@ body{
     width: 100%;
     height: 72px;
 /*     background-color: #0092dc; */
-    background: linear-gradient(to left, #7b4397, #2196f3);
+/*     background: linear-gradient(to left, #7b4397, #2196f3); */
     line-height: 72px;
+    background-image: url(../images/head-row.jpg);
+/*     background-repeat: no-repeat; */
+/*     background-size: cover; */
 }
 .container a,.layui-nav .layui-nav-item a{
     color: #fff;
@@ -105,6 +108,16 @@ body{
     line-height: 72px;
     width: 200px;
 }
+.container .logo img{
+    float: left; 
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height: 72px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+}
+
 .container .right{
     background-color:rgba(0,0,0,0);
     float: right;
@@ -117,7 +130,7 @@ body{
 }
 .container .left_open i{
     display: block;
-    background: rgba(255,255,255,0.1);
+    background: rgb(255 190 255/ 0.4); /* rgba(255,255,255,0.1); */
     width: 32px;
     height: 72px;
     line-height: 72px;
@@ -125,6 +138,8 @@ body{
     text-align: center;
     /* margin-top: 7px; */
     cursor: pointer;
+	/* background-image: url(../images/menu-rounded.png); */
+	font-size:20px;
 }
 .container .left_open i:hover{
     background: rgba(255,255,255,0.3);
@@ -552,6 +567,7 @@ table th, table td {
 	width:50px;
 	height:50px;
 	background-color: #fff;
+	border: 1px solid #FF5722;
 }
 
 .menu-cite{

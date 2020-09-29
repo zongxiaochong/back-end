@@ -6,7 +6,7 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
- 	<link rel="shortcut icon" th:href="@{image/icon.png}">
+	<link rel="shortcut icon" th:href="@{/image/logo.png}">
  	<link rel="stylesheet" th:href="@{css/login.css}">
     <!--[if lt IE 9]>
 	<script th:src="@{../js/html5.min.js}"></script>
@@ -15,29 +15,33 @@
 </head>
 <body>
 	<div class="container">
+		<div class="nav-logo">
+			 <img alt="Logo" th:src="@{/image/logo.png}" class="logo">
+		</div>
 		<div class="card">
 			<form class="card-form">
-				<div class="input">
-					<i style=""></i>
+				<div class="input-row">
 					<input type="text" class="input-field" value="" required />
 					<label class="input-label">用户</label>
 				</div>
-				<div class="input">
+				<div class="input-row">
 					<input type="password" class="input-field" required />
 					<label class="input-label">密码</label>
 				</div>
-				<div class="input">
+				<div class="input-row valid-code">
 					<input type="text" class="input-field" value="" required />
 					<label class="input-label">验证码</label>
+					<img alt="验证码" src="" class="valid-img">
+				</div>
+				<div class="nav-row">
+					<input type="checkbox" name="ss" class="chk">
+					<span>记住用户</span>
 				</div>
 				<div class="action">
 					<button class="action-button">登录</button>
 				</div>
 			</form>
 			<div class="card-info">
-				<p>
-<!-- 					注册前请先仔细阅读 <a href="#">使用条款</a> -->
-				</p>
 			</div>
 		</div>
 	</div>

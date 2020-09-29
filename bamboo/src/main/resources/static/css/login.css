@@ -1,23 +1,29 @@
 @charset "UTF-8";
 *,*:after,*:before{
-	box-sizing:border-box
+	box-sizing: border-box
 }
 body{
 	font-family:"DM Sans",sans-serif;
 	line-height:1.5;
-	background-color:#f1f3fb;
+	background-color: #f1f3fb;
 	padding:0 2rem;
+	
+	
+	margin: 0px;
+	background: url(../image/them-3.jpg) no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
 }
 img{
 	max-width:100%;
 	display:block;
 }
-input{
+/* input{
 	-webkit-appearance:none;
 	-moz-appearance:none;
 	appearance:none;
 	border-radius:0;
-}
+} */
 .card{
 	margin: 2rem auto;
 	display:-webkit-box;
@@ -30,7 +36,7 @@ input{
 	border-radius:10px;
 	box-shadow:0 10px 20px 0 rgba(153,153,153,0.25);
 	padding:.75rem;
-	margin-top: 10%;
+	margin-top: 2%;
 }
 .card-image{
 	border-radius:8px;
@@ -61,7 +67,7 @@ input{
 .card-form{
 	padding:2rem 1rem 0;
 }
-.input{
+.input-row{
 	display:-webkit-box;
 	display:flex;-webkit-box-orient:vertical;
 	-webkit-box-direction:reverse;
@@ -69,7 +75,7 @@ input{
 	position:relative;
 	padding-top:1.5rem;
 }
-.input+.input{
+.input-row+.input-row{
 	margin-top:1.5rem;
 }
 .input-label{
@@ -97,6 +103,23 @@ input{
 	-webkit-transform:translateY(-1.5rem);
 	transform:translateY(-1.5rem);
 }
+
+.valid-code{
+	display: none; 
+}
+.valid-code input {
+	padding-right: 35%;
+}
+.valid-code .valid-img{
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+	margin-left: 65%;
+	width: 120px;
+	height: 30px;
+	border:1px solid #0092dc;
+}
+
 .action{
 	margin-top:2rem;
 }
@@ -110,6 +133,7 @@ input{
 	border-radius:6px;
 	color:#FFF;
 	border:0;
+	cursor: pointer;
 }
 .action-button:focus{
 	outline:0
@@ -125,3 +149,32 @@ input{
 	color: #6658d3;
 	text-decoration:none;
 }
+
+.nav-logo {
+	text-align:center;
+}
+.nav-logo .logo{
+	display:inline-block;
+	width: 100px;
+	height:100px;
+ 
+}
+.nav-row{
+	height:18px;
+	line-height: 18px;
+	font-size:12px;
+	margin-top:1%;
+}
+.nav-row .chk{
+	border: 1px solid; 
+	width: 14px; 
+	height:14px;
+	vertical-align:middle;
+	cursor: pointer;
+}
+.nav-row span{
+	vertical-align:middle;
+}
+	
+	
+	
