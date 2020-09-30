@@ -19,17 +19,17 @@
 			 <img alt="Logo" th:src="@{/image/logo.png}" class="logo">
 		</div>
 		<div class="card">
-			<form class="card-form">
+<!-- 			<form class="card-form"> -->
 				<div class="input-row">
-					<input type="text" class="input-field" value="" required />
+					<input type="text" class="input-field" value=""/>
 					<label class="input-label">用户</label>
 				</div>
 				<div class="input-row">
-					<input type="password" class="input-field" required />
+					<input type="password" class="input-field"  />
 					<label class="input-label">密码</label>
 				</div>
 				<div class="input-row valid-code">
-					<input type="text" class="input-field" value="" required />
+					<input type="text" class="input-field" value="" />
 					<label class="input-label">验证码</label>
 					<img alt="验证码" src="" class="valid-img">
 				</div>
@@ -38,12 +38,15 @@
 					<span>记住用户</span>
 				</div>
 				<div class="action">
-					<button class="action-button">登录</button>
+					<button class="action-button" onclick="login()">登录</button>
 				</div>
-			</form>
+<!-- 			</form> -->
 			<div class="card-info">
+				<span>提示</span>
 			</div>
 		</div>
 	</div>
 </body>
+<script th:src="@{/js/jquery/jquery.min.js}"></script>
+<script th:src="@{/js/sys/login.js}"></script>   
 </html>
