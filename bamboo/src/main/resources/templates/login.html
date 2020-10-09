@@ -21,15 +21,15 @@
 		<div class="card">
 		<!-- <form class="card-form"> -->
 				<div class="input-row">
-					<input type="text" class="input-field" name="account" />
+					<input type="text" class="input-field" name="account" onchange="changeStyle(this)"/>
 					<label class="input-label">用户</label>
 				</div>
 				<div class="input-row">
-					<input type="password" class="input-field" name="password" />
+					<input type="password" class="input-field" name="password" onchange="changeStyle(this)"/>
 					<label class="input-label">密码</label>
 				</div>
 				<div class="input-row valid-code">
-					<input type="text" class="input-field" name="validCode" />
+					<input type="text" class="input-field" name="validCode" onchange="changeStyle(this)"/>
 					<label class="input-label">验证码</label>
 					<img alt="验证码" src="" class="valid-img" onclick="loadValidCode()">
 				</div>
@@ -42,7 +42,7 @@
 				</div>
 			<!-- </form> -->
 			<div class="card-info">
-				<span>提示</span>
+				<span class="messge"></span>
 			</div>
 		</div>
 	</div>

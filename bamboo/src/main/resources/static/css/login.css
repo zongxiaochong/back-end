@@ -99,14 +99,25 @@ img{
 	outline:0;
 	border-bottom-color:#6658d3;
 }
+
 .input-field:focus+.input-label{
 	color:#6658d3;
 	-webkit-transform:translateY(-1.5rem);
 	transform:translateY(-1.5rem);
 }
 
+.input-field-v{
+	outline:0;
+	border-bottom-color:#6658d3;
+}
+.input-label-v{
+	color:#6658d3;
+	-webkit-transform:translateY(-1.5rem);
+	transform:translateY(-1.5rem);
+}
+
 .valid-code{
-/* 	display: none;  */
+	display: none;	
 }
 .valid-code input {
 	padding-right: 35%;
@@ -181,5 +192,7 @@ img{
 	vertical-align:middle;
 }
 	
-	
+.card-info .messge{
+	color: red;
+}	
 	
