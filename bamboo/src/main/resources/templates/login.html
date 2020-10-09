@@ -6,7 +6,7 @@
 	<meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
-	<link rel="shortcut icon" th:href="@{/image/logo.png}">
+	<link rel="shortcut icon" th:href="@{/image/11.png}">
  	<link rel="stylesheet" th:href="@{css/login.css}">
     <!--[if lt IE 9]>
 	<script th:src="@{../js/html5.min.js}"></script>
@@ -19,28 +19,28 @@
 			 <img alt="Logo" th:src="@{/image/logo.png}" class="logo">
 		</div>
 		<div class="card">
-<!-- 			<form class="card-form"> -->
+		<!-- <form class="card-form"> -->
 				<div class="input-row">
-					<input type="text" class="input-field" value=""/>
+					<input type="text" class="input-field" name="account" />
 					<label class="input-label">用户</label>
 				</div>
 				<div class="input-row">
-					<input type="password" class="input-field"  />
+					<input type="password" class="input-field" name="password" />
 					<label class="input-label">密码</label>
 				</div>
 				<div class="input-row valid-code">
-					<input type="text" class="input-field" value="" />
+					<input type="text" class="input-field" name="validCode" />
 					<label class="input-label">验证码</label>
-					<img alt="验证码" src="" class="valid-img">
+					<img alt="验证码" src="" class="valid-img" onclick="loadValidCode()">
 				</div>
 				<div class="nav-row">
-					<input type="checkbox" name="ss" class="chk">
+					<input type="checkbox" class="checkbox" name="remembeAccount" >
 					<span>记住用户</span>
 				</div>
 				<div class="action">
-					<button class="action-button" onclick="login()">登录</button>
+					<button class="action-button" onclick="login();">登录</button>
 				</div>
-<!-- 			</form> -->
+			<!-- </form> -->
 			<div class="card-info">
 				<span>提示</span>
 			</div>

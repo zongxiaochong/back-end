@@ -121,6 +121,8 @@ img{
 	width: 120px;
 	height: 30px;
 	border:1px solid #0092dc;
+	z-index:999;
+	cursor: pointer;
 }
 
 .action{
@@ -168,7 +170,7 @@ img{
 	font-size:12px;
 	margin-top:5%;
 }
-.nav-row .chk{
+.nav-row .checkbox{
 	border: 1px solid; 
 	width: 14px; 
 	height:14px;
