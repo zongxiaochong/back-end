@@ -49,7 +49,7 @@ var initPage = {
 					menuHtml += '<a class="menu-first" href="javascript:;">';
 				}
 				if (iconFont_1) {
-					menuHtml += '<i class="layui-icon ' + iconFont_1 + ' left-nav-li"></i>'
+					menuHtml += '<i class="layui-icon ' + iconFont_1 + ' left-nav-li" lay-tips="' + menuName_1 + '"></i>'
 				} else {
 					menuHtml += '<i class="layui-icon menu-cite left-nav-li"></i>'
 				}
@@ -119,11 +119,18 @@ var initPage = {
 			}
 			return menuHtml;
 		}
-		 
-
-
-
-		
 }
 
- 
+function loginOut() {
+	$.ajax({
+		url: "/loginOut",
+		method: 'get',
+		datatype: 'json',
+		data: {},
+		success: function(data) {
+			location.href = "/login";
+		},
+		error: function(data) {
+		}
+	});
+}

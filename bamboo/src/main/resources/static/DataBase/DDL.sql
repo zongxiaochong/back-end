@@ -8,7 +8,7 @@ CREATE TABLE `back_end`.`t_dict`  (
 
 
 
-CREATE TABLE `back_end`.`sys_account`  (
+CREATE TABLE `back_end`.`user_account`  (
   `id` int(16) NOT NULL COMMENT '主键',
   `account` varchar(64) NOT NULL COMMENT '登录账号',
   `password` varchar(32) NOT NULL COMMENT '密码',
@@ -23,7 +23,7 @@ CREATE TABLE `back_end`.`sys_account`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT='账户表';
 
 
-CREATE TABLE `back_end`.`user_account`  (
+CREATE TABLE `back_end`.`user_info`  (
   `id` int(16) NOT NULL COMMENT '主键',
   `account_id` int(16) NOT NULL COMMENT '账户Id',
   `name` varchar(32) NULL COMMENT '姓名',
@@ -81,7 +81,7 @@ CREATE TABLE `back_end`.`sys_role_releation`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色关系表';
 
 
-CREATE TABLE `back_end`.`sys_account_role`  (
+CREATE TABLE `back_end`.`user_account_role`  (
   `id` int(16) NOT NULL COMMENT '主键', 
   `account_id` int(16) NULL COMMENT '账户Id',
   `role_id` int(16) NULL COMMENT '关系对象Id',

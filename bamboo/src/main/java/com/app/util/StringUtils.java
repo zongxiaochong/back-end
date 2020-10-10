@@ -1,11 +1,37 @@
 package com.app.util;
 
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 import java.util.Random;
 
 public class StringUtils {
 	
+	
+	
+	
+	
+	
+	
 	/**
-	 * 随机码
+	 * 字节数组转换为base64编码
+	 * @param buffer
+	 * @return
+	 */
+	public static String byteArrayToBase64(byte[] buffer) {
+		String result = null;
+		if(buffer != null) {
+			byte[] bytes = Base64.getEncoder().encode(buffer);
+			try {
+				result = new String(bytes, "utf-8");
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * 获取指定长度的随机字符
 	 * @param length
 	 * @return
 	 */
@@ -20,8 +46,5 @@ public class StringUtils {
 		}
 		return sb.toString();
 	}
-	
-		
-
 
 }
