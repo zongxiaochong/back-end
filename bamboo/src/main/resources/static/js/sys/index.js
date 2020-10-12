@@ -20,7 +20,7 @@ var initPage = {
 		
 		loadMenu: function() {
 			$.ajax({
-				url: '/loadMenu',
+				url: '/sys/menu/getMenu',
 				method: 'get',
 				datatype: 'json',
 				data: {},
@@ -134,3 +134,4 @@ function loginOut() {
 		}
 	});
 }
+

@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.app.dao.sys.SysMenuDao;
 import com.app.pojo.sys.SysMenu;
-import com.app.pojo.vo.MenuDataVo;
 import com.app.service.sys.MenuService;
 import com.app.util.ComparatorUtils;
 
 @Service
 public class MenuServiceImpl implements MenuService {
 	
+	@Autowired
+	private SysMenuDao sysMenuDao;
+	
 	@Override
 	public List<SysMenu> getSysMenuList() {
-		MenuDataVo menu = new MenuDataVo();
-		List<SysMenu> menuData = menu.getMenuData();
+		List<SysMenu> menuData = sysMenuDao.selectSysMenu(); 
 		List<SysMenu> rootMenu = menuData.stream()
 					.filter(m -> m.getParentId() == 0).collect(Collectors.toList());
 		

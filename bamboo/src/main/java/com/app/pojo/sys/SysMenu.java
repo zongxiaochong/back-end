@@ -32,7 +32,6 @@ public class SysMenu {
 	private String createDate;
 	
 	
-	
 
 	public Integer getId() {
 		return id;

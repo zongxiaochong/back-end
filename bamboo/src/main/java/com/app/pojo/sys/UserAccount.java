@@ -16,11 +16,11 @@ public class UserAccount {
 	
 	private int isDeleted;
 	
-	private Integer creatorId;
+	private String creator;
 	
 	private Date createTime;
 	
-	private Integer operator; 
+	private String operator; 
 	
 	private Date modifyTime;
 	
@@ -79,12 +79,12 @@ public class UserAccount {
 		this.isDeleted = isDeleted;
 	}
 
-	public Integer getCreatorId() {
-		return creatorId;
+	public String getCreator() {
+		return creator;
 	}
 
-	public void setCreatorId(Integer creatorId) {
-		this.creatorId = creatorId;
+	public void setCreator(String creator) {
+		this.creator = creator;
 	}
 
 	public Date getCreateTime() {
@@ -95,11 +95,11 @@ public class UserAccount {
 		this.createTime = createTime;
 	}
 
-	public Integer getOperator() {
+	public String getOperator() {
 		return operator;
 	}
 
-	public void setOperator(Integer operator) {
+	public void setOperator(String operator) {
 		this.operator = operator;
 	}
 

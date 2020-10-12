@@ -15,9 +15,9 @@ CREATE TABLE `back_end`.`user_account`  (
   `use_status` int(2) NULL COMMENT '使用状态',
   `acc_type` varchar(16) NULL COMMENT '账户类型',
   `is_deleted` int(1) NOT NULL COMMENT '逻辑标识：1-正常使用，0-删除',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
-  `operator` int(16) NULL COMMENT '更新用户:account_id',
+  `operator` varchar(64) NULL COMMENT '更新用户的account',
   `modify_time` datetime(0) NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT='账户表';
@@ -35,9 +35,9 @@ CREATE TABLE `back_end`.`user_info`  (
   `mail` varchar(255) NULL COMMENT '邮箱',
   `addr` varchar(1024) NULL COMMENT '通讯地址',
   `is_deleted` int(1) NULL COMMENT '逻辑标识：1-正常使用，0-删除',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
-  `operator` int(16) NULL COMMENT '更新用户:account_id',
+  `operator` varchar(64) NULL COMMENT '更新用户的account',
   `modify_time` datetime(0) NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户信息表';
@@ -48,12 +48,12 @@ CREATE TABLE `back_end`.`sys_menu`  (
   `menu_code` varchar(128) NOT NULL COMMENT '菜单编码',
   `menu_name` varchar(128) NOT NULL COMMENT '菜单名称',
   `icon_font` varchar(255) NULL COMMENT '菜单图标',
-  `path` varchar(255) NOT NULL COMMENT '菜单路径',
+  `path` varchar(255) NULL COMMENT '菜单路径',
   `url` varchar(255) NULL COMMENT '菜单URL,保留字段',
   `parent_id` int(16) NULL COMMENT '父级菜单Id',
   `menu_level` int(3) NULL COMMENT '菜单层级',
   `sort` int(3) NULL COMMENT '排序编号',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '菜单表';
@@ -64,7 +64,7 @@ CREATE TABLE `back_end`.`sys_role`  (
   `role_code` varchar(32) NULL COMMENT '角色编号',
   `role_name` varchar(128) NULL COMMENT '角色名称',
   `remark` varchar(255) NULL COMMENT '描述',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色表';
@@ -75,7 +75,7 @@ CREATE TABLE `back_end`.`sys_role_releation`  (
   `rel_type` varchar(32) NOT NULL COMMENT '关系类型：menu-菜单，permission-权限',
   `role_id` int(16) NOT NULL COMMENT '角色Id',
   `obj_id` int(16) NOT NULL COMMENT '关系对象Id',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '角色关系表';
@@ -84,14 +84,14 @@ CREATE TABLE `back_end`.`sys_role_releation`  (
 CREATE TABLE `back_end`.`user_account_role`  (
   `id` int(16) NOT NULL COMMENT '主键', 
   `account_id` int(16) NULL COMMENT '账户Id',
-  `role_id` int(16) NULL COMMENT '关系对象Id',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `role_id` int(16) NULL COMMENT '角色Id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '账户关系表';
 
 
-CREATE TABLE `back_end`.`user_org`  (
+CREATE TABLE `back_end`.`user_info_org`  (
   `id` int(16) NOT NULL COMMENT '主键',
   `org_code` varchar(512) NULL COMMENT '机构编码',
   `org_name` varchar(512) NOT NULL COMMENT '结构名称',
@@ -101,15 +101,15 @@ CREATE TABLE `back_end`.`user_org`  (
   `org_manager` int(16) NULL COMMENT '经理',
   `parent_id` int(16) NULL COMMENT '上级机构',
   `is_deleted` int(1) NULL COMMENT '逻辑标识：1-正常使用，0-删除',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
-  `operator` int(16) NULL COMMENT '更新用户:account_id',
+  `operator` varchar(64) NULL COMMENT '更新用户的account',
   `modify_time` datetime(0) NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '组织机构表';
 
 
-CREATE TABLE `back_end`.`user_dept`  (
+CREATE TABLE `back_end`.`user_info_dept`  (
   `id` int(16) NOT NULL COMMENT '主键',
   `dept_code` varchar(512) NULL COMMENT '部门编码',
   `dept_name` varchar(512) NULL COMMENT '部门名称',
@@ -117,20 +117,20 @@ CREATE TABLE `back_end`.`user_dept`  (
   `parent_id` int(16) NULL COMMENT '上级部门',
   `org_id` int(16) NULL COMMENT '所属机构',
   `is_deleted` int(1) NULL COMMENT '逻辑标识：1-正常使用，0-删除',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
-  `operator` int(16) NULL COMMENT '更新用户:account_id',
+  `operator` varchar(64) NULL COMMENT '更新用户的account',
   `modify_time` datetime(0) NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '部门表';
 
 
-CREATE TABLE `back_end`.`user_releation`  (
+CREATE TABLE `back_end`.`user_info_releation`  (
   `id` int(16) NOT NULL COMMENT '主键',
   `rel_type` varchar(32) NULL COMMENT '关系类型：org-机构, dept-部门',
   `user_id` int(16) NULL COMMENT '用户Id',
   `obj_id` int(16) NULL COMMENT '关系对象Id',
-  `creator` int(16) NULL COMMENT '添加用户:account_id',
+  `creator` varchar(64) NULL COMMENT '添加用户的account',
   `create_time` datetime(0) NULL COMMENT '添加时间',
   PRIMARY KEY (`id`)
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户关系表';

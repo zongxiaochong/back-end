@@ -60,7 +60,7 @@ function login() {
 				return;
 			}
 			loginSuccess();
-			location.href = "/index";
+			location.href = "/sys/index";
 		},
 		error: function(data) {
 			$(".messge").text("验证码不正确！");
