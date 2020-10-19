@@ -4,11 +4,12 @@ import java.io.UnsupportedEncodingException;
 import java.util.Base64;
 import java.util.Random;
 
+/**
+ * 字符串工具
+ * @author weizong
+ *
+ */
 public class StringUtils {
-	
-	
-	
-	
 	
 	
 	
