@@ -21,7 +21,7 @@ public class SysController {
 	
 	@RequestMapping("/dict")
 	public String dict() {
-		return "sys/dict";
+		return "sys/dict2";
 	}
 	
 	

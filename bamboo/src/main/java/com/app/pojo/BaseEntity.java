@@ -4,20 +4,29 @@ import java.util.Date;
 
 public class BaseEntity {
 	
+	private int isDeleted;
 	
 	private String creator;
 	
 	private Date createTime;
 	
-	private String createDate;
-	
 	private String operator; 
 	
 	private Date modifyTime;
 	
+	private String createDate;
+	
 	private String modifyDate;
 	
 	
+	
+	public int getIsDeleted() {
+		return isDeleted;
+	}
+
+	public void setIsDeleted(int isDeleted) {
+		this.isDeleted = isDeleted;
+	}
 
 	public String getCreator() {
 		return creator;

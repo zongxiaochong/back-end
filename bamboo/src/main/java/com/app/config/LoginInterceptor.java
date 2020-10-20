@@ -14,7 +14,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		UserAccount sysAccount = (UserAccount) request.getSession().getAttribute(GlobalConst.USER);
+		UserAccount sysAccount = (UserAccount) request.getSession().getAttribute(GlobalConst.LOGIN_USER);
 		if (sysAccount == null) {
 			response.sendRedirect("/login");
 			return false;

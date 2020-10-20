@@ -3,11 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
-	<link rel="stylesheet" th:href="@{/static/css/app.css}">
-	<script th:src="@{/static/js/jquery/jquery.min.js}"></script>
+	<link rel="stylesheet" href="//res.layui.com/layui/dist/css/layui.css"  media="all">
+ 	<link rel="stylesheet" th:href="@{/static/css/app.css}">
+ 	<script src="//res.layui.com/layui/dist/layui.js" charset="utf-8"></script>
 </head>
 <body>
-	<h1>user</h1>
+	<table class="layui-hide" id="test"></table>
+	
+	
+	<script>
+		layui.use('table', function(){
+		  var table = layui.table;
+		  
+		  table.render({
+		    elem: '#test'
+		    ,url:''
+		    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+		      layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+		      //,curr: 5 //设定初始在第 5 页
+		      ,groups: 10 //只显示 1 个连续页码
+		      ,first: false //不显示首页
+		      ,last: false //不显示尾页
+		      
+		    }
+		    ,cols: [[
+		      {field:'', width:80, title: 'ID', sort: true}
+		    
+		    ]]
+		    
+		  });
+		});
+</script>
 
 </body>
 </html>

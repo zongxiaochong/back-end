@@ -2,7 +2,9 @@ package com.app.pojo.sys;
 
 import java.util.Date;
 
-public class UserAccount {
+import com.app.pojo.BaseEntity;
+
+public class UserAccount extends BaseEntity {
 	
 	private Integer id;
 	
@@ -10,25 +12,16 @@ public class UserAccount {
 	
 	private String password;
 	
+	private Date lastLogin;
+	
 	private int useStatus;
 	
 	private String accType;
 	
-	private int isDeleted;
+	private String loginSet;
 	
-	private String creator;
-	
-	private Date createTime;
-	
-	private String operator; 
-	
-	private Date modifyTime;
-	
-	
-	private String createDate;
-	
-	private String modifyDate;
-	
+	private String lastDate;
+	 
 	
 
 	public Integer getId() {
@@ -54,6 +47,14 @@ public class UserAccount {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public Date getLastLoginTime() {
+		return lastLogin;
+	}
+
+	public void setLastLoginTime(Date lastLogin) {
+		this.lastLogin = lastLogin;
+	}
 
 	public int getUseStatus() {
 		return useStatus;
@@ -70,61 +71,30 @@ public class UserAccount {
 	public void setAccType(String accType) {
 		this.accType = accType;
 	}
-
-	public int getIsDeleted() {
-		return isDeleted;
+ 
+	public Date getLastLogin() {
+		return lastLogin;
 	}
 
-	public void setIsDeleted(int isDeleted) {
-		this.isDeleted = isDeleted;
+	public void setLastLogin(Date lastLogin) {
+		this.lastLogin = lastLogin;
 	}
 
-	public String getCreator() {
-		return creator;
+	public String getLoginSet() {
+		return loginSet;
 	}
 
-	public void setCreator(String creator) {
-		this.creator = creator;
+	public void setLoginSet(String loginSet) {
+		this.loginSet = loginSet;
 	}
 
-	public Date getCreateTime() {
-		return createTime;
+	public String getLastDate() {
+		return lastDate;
 	}
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
+	public void setLastDate(String lastDate) {
+		this.lastDate = lastDate;
 	}
-
-	public String getOperator() {
-		return operator;
-	}
-
-	public void setOperator(String operator) {
-		this.operator = operator;
-	}
-
-	public Date getModifyTime() {
-		return modifyTime;
-	}
-
-	public void setModifyTime(Date modifyTime) {
-		this.modifyTime = modifyTime;
-	}
-
-	public String getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
-	}
-
-	public String getModifyDate() {
-		return modifyDate;
-	}
-
-	public void setModifyDate(String modifyDate) {
-		this.modifyDate = modifyDate;
-	}
+	
 	
 }

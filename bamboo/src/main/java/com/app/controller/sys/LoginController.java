@@ -75,10 +75,10 @@ public class LoginController {
 		UserAccount user = new UserAccount();
 		user.setAccount(account);
 		user.setPassword(password);
-		LoginService.doLogin(user);
+		result = LoginService.doLogin(user);
 		
 		HttpSession session = request.getSession();
-		session.setAttribute(GlobalConst.USER, user);
+		session.setAttribute(GlobalConst.LOGIN_USER, result.getData());
 		return result;
 	}
 	
@@ -86,7 +86,7 @@ public class LoginController {
 	@GetMapping("/loginOut")
 	@ResponseBody
 	public void loginOut(HttpServletRequest request, HttpServletResponse response) {
-		request.getSession().removeAttribute(GlobalConst.USER);
+		request.getSession().removeAttribute(GlobalConst.LOGIN_USER);
 	}
 
 

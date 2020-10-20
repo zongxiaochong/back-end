@@ -14,8 +14,24 @@ $(function() {
  */
 var initPage = {
 		loadUser: function() {
-			$("#userHead").attr('src', 'https://static.oschina.net/new-osc/img/logo_osc_simple.svg');
-			$("#userName").text("诸葛亮");
+			$.ajax({
+				url: '/sys/user/getUserInfo',
+				method: 'get',
+				datatype: 'json',
+				data: {},
+				success: function(data) {
+					var jsonData = data.data;
+					$("#userName").text(jsonData.account);
+					if (jsonData.headPhoto) {
+						$("#userHead").attr('src', jsonData.headPhoto);
+					} else {
+						$("#userHead").attr('src', '/static/images/default_head_photo.png');
+					}
+				},
+				error: function(data) {
+					location.href = "/login";
+				}
+			});
 		},
 		
 		loadMenu: function() {
@@ -29,7 +45,7 @@ var initPage = {
 					$("#nav").html(menuHtml);
 				},
 				error: function(data) {
-					
+					location.href = "/login";
 				}
 			});
 		},

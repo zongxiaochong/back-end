@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.app.dao.sys.UserDao">
+
+	<resultMap type="com.app.pojo.vo.UserInfoVO" id="userInfoVO">
+		<id column="id" property="id"/>
+		<result column="account" property="account"/>
+		<result column="last_login_time" property="lastLoginTime"/>
+		<result column="use_status" property="useStatus"/>
+		<result column="acc_type" property="accType"/>
+		<result column="login_set" property="loginSet"/>
+		<result column="user_id" property="userId"/>
+		<result column="user_name" property="userName"/>
+		<result column="sex" property="sex"/>
+		<result column="birthdayDate" property="birthdayDate"/>
+		<result column="id_type" property="idType"/>
+		<result column="id_number" property="idNumber"/>
+		<result column="phone" property="phone"/>
+		<result column="mail" property="mail"/>
+		<result column="addr" property="addr"/>
+		<result column="head_photo" property="headPhoto"/>
+	</resultMap>
+
+
+	<select id="getUser" parameterType="com.app.pojo.sys.UserAccount"
+		resultType="com.app.pojo.sys.UserAccount">
+		select *
+		  from user_account t
+		 where t.is_deleted = 1
+		   and t.account = #{account}
+		   and t.password = #{password}
+	</select>
+
+	<select id="getUserInfo" parameterType="com.app.pojo.sys.UserAccount"
+		resultMap="userInfoVO">
+		select a.id,
+			 a.account,
+			 DATE_FORMAT(a.last_login_time, '%Y-%m-%d') as last_login_time,
+             a.use_status,
+			 a.acc_type,
+			 a.login_set,
+			 b.id as user_id,
+			 b.user_name,
+			 b.sex, 
+			 DATE_FORMAT(b.birthday, '%Y-%m-%d') as birthdayDate,
+			 b.id_type,
+			 b.id_number,
+			 b.phone,
+			 b.mail,
+			 b.addr,
+			 b.head_photo
+		  from user_account a
+		  left join user_info b on b.account_id = a.id and b.is_deleted = 1
+		 where a.is_deleted = 1
+		   and a.account = #{account}
+		   and a.id = #{id}
+	</select>
+
+
+</mapper>

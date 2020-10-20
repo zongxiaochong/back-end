@@ -168,6 +168,7 @@ img{
 
 .nav-logo {
 	text-align:center;
+	height:100px;
 }
 .nav-logo .logo{
 	display:inline-block;

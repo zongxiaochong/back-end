@@ -11,8 +11,17 @@
 </head>
 <body>
  	<div class="container-fluid">
-		<p class="text-primary">xxx 您好，欢迎登录系统，今天是：2020年9月27日 17:04:50 星期日！</p>
+		<div class="text-primary">
+			<span id="user-name"></span> 您好，欢迎登录系统，现在时间是：<span id="show-date"></span>！
+		</div>
  	</div>
 	
+	<script type="text/javascript">
+		document.getElementById("user-name").innerHTML = window.parent.$("#userName").text();
+		function displayTime() {
+			document.getElementById("show-date").innerHTML = new Date().toLocaleString() + " ";
+	    } 
+    	setInterval(displayTime,10);      // 每隔1秒钟调用displayTime函数
+	</script>
 </body>
 </html>

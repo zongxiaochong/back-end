@@ -22,7 +22,6 @@ public class MenuServiceImpl implements MenuService {
 		List<SysMenu> menuData = sysMenuDao.selectSysMenu(); 
 		List<SysMenu> rootMenu = menuData.stream()
 					.filter(m -> m.getParentId() == 0).collect(Collectors.toList());
-		
 		Collections.sort(rootMenu, ComparatorUtils.menuOrder());
 		rootMenu.stream().forEach(m -> {
 			List<SysMenu> childList = getChild(m.getId(), menuData);
